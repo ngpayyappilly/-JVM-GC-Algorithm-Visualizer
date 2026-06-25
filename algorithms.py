@@ -201,11 +201,11 @@ G1_LAYOUTS = {
 }
 
 REGION_TYPE_CFG = {
-    0: {"label": "E", "name": "Eden",       "fill": "#0088FF44", "border": "#0088FF"},
-    1: {"label": "S", "name": "Survivor",   "fill": "#FFD70044", "border": "#FFD700"},
-    2: {"label": "O", "name": "Old",        "fill": "#7C4DFF44", "border": "#7C4DFF"},
-    3: {"label": "H", "name": "Humongous",  "fill": "#FF6D0044", "border": "#FF6D00"},
-    4: {"label": "·", "name": "Free",       "fill": "#04081044", "border": "#0F1E2E"},
-    5: {"label": "C", "name": "Collecting", "fill": "#FF174444", "border": "#FF1744"},
-    6: {"label": "M", "name": "Marking",    "fill": "#00FF8844", "border": "#00FF88"},
+    0: {"label": "E", "name": "Eden",       "fill": "rgba(0,136,255,0.27)",   "border": "#0088FF"},
+    1: {"label": "S", "name": "Survivor",   "fill": "rgba(255,215,0,0.27)",   "border": "#FFD700"},
+    2: {"label": "O", "name": "Old",        "fill": "rgba(124,77,255,0.27)",  "border": "#7C4DFF"},
+    3: {"label": "H", "name": "Humongous",  "fill": "rgba(255,109,0,0.27)",   "border": "#FF6D00"},
+    4: {"label": "·", "name": "Free",       "fill": "rgba(4,8,16,0.27)",      "border": "#0F1E2E"},
+    5: {"label": "C", "name": "Collecting", "fill": "rgba(255,23,68,0.27)",   "border": "#FF1744"},
+    6: {"label": "M", "name": "Marking",    "fill": "rgba(0,255,136,0.27)",   "border": "#00FF88"},
 }

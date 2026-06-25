@@ -1,7 +1,7 @@
 import streamlit as st
 import plotly.graph_objects as go
 from algorithms import G1_LAYOUTS, REGION_TYPE_CFG
-from styles import PLOTLY_BASE
+from styles import PLOTLY_BASE, hex_to_rgba
 
 
 def render_heap(algo, phase, young_pct, old_pct, is_stw):
@@ -66,7 +66,7 @@ def _render_heap_bars(algo, young_pct, old_pct, is_stw):
         elif v > 76:
             colors.append("#FF5533")
         else:
-            colors.append(color if i == 2 else color + "CC")
+            colors.append(color if i == 2 else hex_to_rgba(color, 0.8))
 
     annotations = []
     for i, v in enumerate(values):

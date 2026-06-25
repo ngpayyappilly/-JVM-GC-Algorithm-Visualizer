@@ -1,6 +1,6 @@
 import streamlit as st
 import plotly.graph_objects as go
-from styles import PLOTLY_BASE
+from styles import PLOTLY_BASE, hex_to_rgba
 
 
 def render_thread_panel(phase, algo_color):
@@ -15,7 +15,7 @@ def render_thread_panel(phase, algo_color):
     for i in range(7, -1, -1):
         active = i < gc_t
         values.append(1.0 if active else 0.15)
-        colors.append(algo_color + "99" if active else "#0C1628")
+        colors.append(hex_to_rgba(algo_color, 0.6) if active else "#0C1628")
 
     for i in range(3, -1, -1):
         active = i < app_t

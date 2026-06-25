@@ -1,6 +1,6 @@
 import streamlit as st
 import plotly.graph_objects as go
-from styles import PLOTLY_BASE
+from styles import PLOTLY_BASE, hex_to_rgba
 
 
 def render_phase_ribbon(algo, phase_idx, progress):
@@ -15,7 +15,7 @@ def render_phase_ribbon(algo, phase_idx, progress):
         if p["stw"]:
             fill = "rgba(255,23,68,0.5)" if is_active else "rgba(255,23,68,0.2)"
         else:
-            fill = color + ("88" if is_active else "33")
+            fill = hex_to_rgba(color, 0.53 if is_active else 0.2)
 
         fig.add_shape(
             type="rect",
