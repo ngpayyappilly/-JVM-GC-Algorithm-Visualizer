@@ -7,8 +7,21 @@ from styles import PLOTLY_BASE, hex_to_rgba
 def render_heap(algo, phase, young_pct, old_pct, is_stw):
     if algo["heap_model"] == "regions":
         _render_g1_grid(phase, is_stw)
+        _render_region_legend()
     else:
         _render_heap_bars(algo, young_pct, old_pct, is_stw)
+
+
+def _render_region_legend():
+    items = []
+    for rtype in (0, 1, 2, 3, 4, 5, 6):
+        cfg = REGION_TYPE_CFG[rtype]
+        items.append(
+            f'<div class="region-legend-item">'
+            f'<div class="region-legend-swatch" style="background:{cfg["fill"]};border-color:{cfg["border"]}"></div>'
+            f'{cfg["label"]} {cfg["name"]}</div>'
+        )
+    st.markdown(f'<div class="region-legend">{"".join(items)}</div>', unsafe_allow_html=True)
 
 
 def _render_g1_grid(phase, is_stw):

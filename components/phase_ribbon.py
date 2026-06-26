@@ -28,14 +28,17 @@ def render_phase_ribbon(algo, phase_idx, progress):
             prog_w = w * progress / 100
             fig.add_shape(
                 type="rect",
-                x0=x_pos, x1=x_pos + prog_w, y0=0, y1=0.15,
+                x0=x_pos, x1=x_pos + prog_w, y0=0, y1=0.18,
                 fillcolor=color, line=dict(width=0),
             )
 
-        if w > 12:
+        if w > 8:
+            label = p["name"][:10]
+            if p["stw"] and w > 14:
+                label = "STW " + label[:6]
             fig.add_annotation(
-                x=x_pos + w / 2, y=0.5,
-                text=p["name"][:8], showarrow=False,
+                x=x_pos + w / 2, y=0.55,
+                text=label, showarrow=False,
                 font=dict(family="JetBrains Mono", size=8,
                           color="#C8DDE8" if is_active else "#2A4560"),
             )
@@ -43,7 +46,7 @@ def render_phase_ribbon(algo, phase_idx, progress):
 
     fig.update_layout(
         **PLOTLY_BASE,
-        height=50,
+        height=70,
         xaxis=dict(visible=False, range=[0, x_pos]),
         yaxis=dict(visible=False, range=[0, 1]),
         showlegend=False,
