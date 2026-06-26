@@ -41,7 +41,7 @@ def inject_global_styles():
     <style>
         .stApp { background-color: #03070F; }
         .stSidebar, [data-testid="stSidebar"] { background-color: #060D1C !important; }
-        .block-container { padding-top: 1rem !important; }
+        .block-container { padding-top: 1rem !important; max-width: 1200px; }
         [data-testid="stMetric"] {
             background: #081224;
             border: 1px solid #102040;
@@ -75,6 +75,74 @@ def inject_global_styles():
         h1, h2, h3 {
             font-family: 'Barlow Condensed', sans-serif !important;
             letter-spacing: 0.08em;
+        }
+        .stw-banner {
+            background: rgba(255,23,68,0.15);
+            border: 1px solid rgba(255,23,68,0.5);
+            border-radius: 6px;
+            padding: 10px 18px;
+            text-align: center;
+            margin-bottom: 8px;
+            animation: stw-pulse 1.2s ease-in-out infinite;
+        }
+        @keyframes stw-pulse {
+            0%, 100% { box-shadow: 0 0 8px rgba(255,23,68,0.3); }
+            50% { box-shadow: 0 0 20px rgba(255,23,68,0.6); }
+        }
+        .algo-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 4px;
+        }
+        .algo-header-name {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+        }
+        .algo-header-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            padding: 3px 10px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+        }
+        .region-legend {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 4px 0;
+        }
+        .region-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: #9BBFCC;
+        }
+        .region-legend-swatch {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            border-width: 1.5px;
+            border-style: solid;
+        }
+        .stTabs [data-baseweb="tab-list"] {
+            gap: 0;
+            background: #060D1C;
+            border-bottom: 1px solid #102040;
+        }
+        .stTabs [data-baseweb="tab"] {
+            font-family: 'JetBrains Mono', monospace !important;
+            font-size: 11px !important;
+            letter-spacing: 0.08em;
+            color: #2A4560 !important;
+            padding: 8px 20px !important;
+        }
+        .stTabs [aria-selected="true"] {
+            color: #C8DDE8 !important;
         }
     </style>
     """, unsafe_allow_html=True)
